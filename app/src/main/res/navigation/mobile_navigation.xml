@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_regles">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.projetandroid.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_regles"
+        android:name="com.example.projetandroid.ui.regles.ReglesFragment"
+        android:label="@string/title_regles"
+        tools:layout="@layout/fragment_regles" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.projetandroid.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_jouer"
+        android:name="com.example.projetandroid.ui.jouer.JouerFragment"
+        android:label="@string/title_jouer"
+        tools:layout="@layout/fragment_jouer" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.projetandroid.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_roles"
+        android:name="com.example.projetandroid.ui.roles.RolesFragment"
+        android:label="@string/title_roles"
+        tools:layout="@layout/fragment_roles" />
 </navigation>

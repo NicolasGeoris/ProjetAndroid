@@ -1,4 +1,4 @@
-package com.example.projetandroid.ui.home
+package com.example.projetandroid.ui.regles
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,22 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.projetandroid.R
 
-class HomeFragment : Fragment() {
-
-    private lateinit var homeViewModel: HomeViewModel
+class ReglesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+        val root = inflater.inflate(R.layout.fragment_jouer, container, false)
         return root
     }
 }
