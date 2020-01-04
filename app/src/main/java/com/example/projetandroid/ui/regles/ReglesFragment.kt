@@ -12,12 +12,20 @@ import com.example.projetandroid.R
 
 class ReglesFragment : Fragment() {
 
+    private lateinit var reglesViewModel: ReglesViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_jouer, container, false)
+        reglesViewModel =
+            ViewModelProviders.of(this).get(ReglesViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_regles, container, false)
+        val textView: TextView = root.findViewById(R.id.texte_regles)
+        reglesViewModel.text.observe(this, Observer {
+            textView.text = it
+        })
         return root
     }
 }

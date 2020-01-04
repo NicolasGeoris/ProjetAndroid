@@ -3,4 +3,5 @@
     <string name="title_regles">Règles</string>
     <string name="title_jouer">Jouer</string>
     <string name="title_roles">Rôles</string>
+    <string name="texte_regles">regles</string>
 </resources>
