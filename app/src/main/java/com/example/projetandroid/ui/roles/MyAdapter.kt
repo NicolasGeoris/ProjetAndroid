@@ -2,6 +2,7 @@ package com.example.projetandroid.ui.roles
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -35,8 +36,18 @@ class MyAdapter(private val myDataset: List<Role>) :
         // - replace the contents of the view with that element
         val nom = holder.cardView.findViewById<TextView>(R.id.nom_role)
         val description = holder.cardView.findViewById<TextView>(R.id.description_role)
+        val image = holder.cardView.findViewById<ImageView>(R.id.image_role)
         nom.text = myDataset[position].nom
         description.text = myDataset[position].description
+        when (myDataset[position].nom) {
+            "Simple Villageois" -> image.setImageResource(R.mipmap.ic_villageois_foreground)
+            "Loup-Garou" -> image.setImageResource(R.mipmap.ic_loup_foreground)
+            "Voyante" -> image.setImageResource(R.mipmap.ic_voyante_foreground)
+            "Petite Fille" -> image.setImageResource(R.mipmap.ic_petite_fille_foreground)
+            "Chasseur" -> image.setImageResource(R.mipmap.ic_chasseur_foreground)
+            "Cupidon" -> image.setImageResource(R.mipmap.ic_cupidon_foreground)
+            "Sorcière" -> image.setImageResource(R.mipmap.ic_sorciere_foreground)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

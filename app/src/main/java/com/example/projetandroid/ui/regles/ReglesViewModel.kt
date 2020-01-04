@@ -37,7 +37,7 @@ class ReglesViewModel : ViewModel() {
                 "Tous les joueurs peuvent rouvrir et prennent part au débat, essayant de chercher les loups-garous parmi eux.\n" +
                 "A la fin de la journée ils votent et décident de tuer quelqu'un.\n" +
                 "\n" +
-                "Un joueur mort ne peut plus parler jusqu'à la fin de la partie."
+                "Un joueur mort ne peut plus parler jusqu'à la fin de la partie.\n\n\n"
     }
     val text: LiveData<String> = _text
 }
