@@ -4,4 +4,8 @@
     <string name="title_jouer">Jouer</string>
     <string name="title_roles">Rôles</string>
     <string name="texte_regles">regles</string>
+    <string name="add_player">Ajouter joueur</string>
+    <string name="player_name">Nom du joueur</string>
+    <string name="new_player">Nouveau joueur</string>
+    <string name="player_role">Rôle du joueur</string>
 </resources>
