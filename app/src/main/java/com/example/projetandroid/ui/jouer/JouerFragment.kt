@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.projetandroid.R
 import kotlinx.android.synthetic.main.fragment_jouer.*
@@ -23,18 +24,15 @@ class JouerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val inflater = requireActivity().layoutInflater
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
-            builder.setMessage(R.string.dialog_fire_missiles)
+            builder.setView(inflater.inflate(R.layout.new_button, null))
                 .setPositiveButton(R.string.fire
                 ) { dialog, id ->
-                    // FIRE ZE MISSILES!
+                    // sign in the user ...
                 }
-                .setNegativeButton(R.string.cancel
-                ) { dialog, id ->
-                    // User cancelled the dialog
-                }
-            // Create the AlertDialog object and return it
+                .setNegativeButton(R.string.cancel) { _, _ -> }
             builder.create()
             builder.show()
         }
