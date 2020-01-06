@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projetandroid.R
 import com.example.projetandroid.Role
 
-class AdapterRoleJouer(private val myDataset: List<String>) :
+class AdapterRoleJouer(private val myDataset: List<Joueur>) :
     RecyclerView.Adapter<AdapterRoleJouer.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -34,11 +34,10 @@ class AdapterRoleJouer(private val myDataset: List<String>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        val nom = holder.cardView.findViewById<TextView>(R.id.texte_role)
-        var nombrePicker = holder.cardView.findViewById<NumberPicker>(R.id.nombre_role)
-        nom.text = myDataset[position]
-        nombrePicker.minValue = 0
-        nombrePicker.maxValue = 10
+        val nom = holder.cardView.findViewById<TextView>(R.id.texte_nom)
+        val role = holder.cardView.findViewById<TextView>(R.id.texte_role)
+        nom.text = myDataset[position].nom
+        role.text = myDataset[position].role
     }
 
     // Return the size of your dataset (invoked by the layout manager)
