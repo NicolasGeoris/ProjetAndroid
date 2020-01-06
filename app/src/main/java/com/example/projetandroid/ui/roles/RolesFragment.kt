@@ -34,8 +34,7 @@ class RolesFragment : Fragment() {
             Role("Petite Fille", "Villageois qui peut discrètement observer les loups pendant la nuit"),
             Role("Chasseur", "Villageois qui tue quelqu'un à sa mort"),
             Role("Sorcière", "Villageois qui possède une potion de mort et une potion de résurrection et qui se réveille la nuit pour les utiliser, chacune une fois par partie"),
-            Role("Cupidon", "Villageois qui lie deux personnes la première nuit. Si l'un des amoureux meurt, l'autre meurt aussi"),
-            Role("    ", "mdr sava"))
+            Role("Cupidon", "Villageois qui lie deux personnes la première nuit. Si l'un des amoureux meurt, l'autre meurt aussi"))
 
         val adapter = MyAdapter(roles)
         recyclerView?.adapter = adapter
