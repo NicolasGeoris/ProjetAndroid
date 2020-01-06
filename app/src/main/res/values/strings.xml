@@ -8,4 +8,7 @@
     <string name="player_name">Nom du joueur</string>
     <string name="new_player">Nouveau joueur</string>
     <string name="player_role">Rôle du joueur</string>
+    <string name="dialog_fire_missiles">Renseigner le nom et le rôle du joueur</string>
+    <string name="cancel">Annuler</string>
+    <string name="fire">Valider</string>
 </resources>

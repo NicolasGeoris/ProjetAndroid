@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.projetandroid.R
+import kotlinx.android.synthetic.main.fragment_jouer.view.*
+
 
 class NewPlayer : Fragment() {
 
@@ -15,6 +17,11 @@ class NewPlayer : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var root = inflater.inflate(R.layout.new_button, container, false)
+        var cc = root.cc
+        var btn = root.btn
+        btn.setOnClickListener {
+            cc.text = "vv"
+        }
         return root
     }
 
