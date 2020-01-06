@@ -17,11 +17,6 @@ class NewPlayer : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var root = inflater.inflate(R.layout.new_button, container, false)
-        var cc = root.cc
-        var btn = root.btn
-        btn.setOnClickListener {
-            cc.text = "vv"
-        }
         return root
     }
 
