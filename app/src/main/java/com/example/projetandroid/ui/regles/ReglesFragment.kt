@@ -17,7 +17,6 @@ class ReglesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_jouer, container, false)
-        return root
+        return inflater.inflate(R.layout.fragment_jouer, container, false)
     }
 }
