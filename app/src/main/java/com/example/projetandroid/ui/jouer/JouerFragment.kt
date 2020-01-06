@@ -8,8 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.projetandroid.R
 import kotlinx.android.synthetic.main.fragment_jouer.*
+import android.widget.EditText
+import android.widget.Spinner
+import kotlinx.android.synthetic.main.new_button.*
 
 class JouerFragment : Fragment() {
+
+    var joueurs: List<Joueur> = emptyList()
+    lateinit var player_input : EditText
+    lateinit var role_input : Spinner
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,12 +32,13 @@ class JouerFragment : Fragment() {
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
             builder.setView(inflater.inflate(R.layout.new_button, null))
-                .setPositiveButton(R.string.fire
-                ) { dialog, id ->
-                    // sign in the user ...
-                }
-                .setNegativeButton(R.string.cancel) { _, _ -> }
             builder.create()
+            builder.setPositiveButton(
+                R.string.fire
+            ) { dialog, id ->
+                joueurs + Joueur(player_input.text.toString(), player_role.selectedItem.toString())
+            }
+            builder.setNegativeButton(R.string.cancel) { _, _ -> }
             builder.show()
         }
     }
