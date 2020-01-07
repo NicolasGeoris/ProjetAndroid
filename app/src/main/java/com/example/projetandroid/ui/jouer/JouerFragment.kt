@@ -8,12 +8,18 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.projetandroid.R
+import com.example.projetandroid.ui.roles.JouerViewModel
+import com.example.projetandroid.ui.roles.MyAdapter
 import kotlinx.android.synthetic.main.fragment_jouer.*
 
 class JouerFragment : Fragment() {
 
-    var joueurs: List<Joueur> = emptyList()
+    private lateinit var jouerViewModel : JouerViewModel
     var nom_joueur = ""
     var role_joueur = ""
 
@@ -22,21 +28,25 @@ class JouerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        /*role_input.setOnItemSelectedListener {
-            // Create an ArrayAdapter using a simple spinner layout and languages array
-            val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, list_of_items)
-            // Set layout to use when the list of choices appear
-            aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Set Adapter to Spinner
-            role_input.setAdapter(aa)
-        }*/
-
-
-        return inflater.inflate(R.layout.fragment_jouer, container, false)
+        jouerViewModel =
+            ViewModelProviders.of(this).get(JouerViewModel::class.java)
+        var root = inflater.inflate(R.layout.fragment_jouer, container, false)
+        val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_joueurs)
+        recyclerView?.layoutManager = LinearLayoutManager(root.context)
+        jouerViewModel.liste.observe(this, Observer {
+            recyclerView.adapter = AdapterRoleJouer(it)
+        })
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        jouerViewModel =
+            ViewModelProviders.of(this).get(JouerViewModel::class.java)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_joueurs)
+
         val inflater = requireActivity().layoutInflater
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
@@ -50,12 +60,11 @@ class JouerFragment : Fragment() {
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                nom_joueur = input_nom.text.toString()
-                //role_joueur = input_role.selectedItem.toString()
+                jouerViewModel.liste.value = jouerViewModel.liste.value?.plus(Joueur(input_nom.text.toString(), "chacalito"))
+                (recyclerView.adapter as AdapterRoleJouer).notifyDataSetChanged()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }
             builder.show()
-            joueurs + Joueur(nom_joueur, role_joueur)
         }
     }
 }
