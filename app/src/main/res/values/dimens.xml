@@ -3,4 +3,12 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="popup_width">150dp</dimen>
+    <dimen name="margin_droite_element_joueur">5sp</dimen>
+    <dimen name="margin_gauche_element_joueur">20sp</dimen>
+    <dimen name="gros_texte">30sp</dimen>
+    <dimen name="margin_top_recycler_joueur">5sp</dimen>
+    <dimen name="petit_padding">3sp</dimen>
+    <dimen name="petit_texte">20sp</dimen>
+    <dimen name="margin_bouton_flottant">16dp</dimen>
+    <dimen name="padding_moyen">8dp</dimen>
 </resources>

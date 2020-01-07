@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="5sp">
+    android:layout_marginTop="@dimen/margin_top_recycler_joueur">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/couleur_texte"
-            android:textSize="30sp"
-            android:layout_marginStart="20sp"/>
+            android:textSize="@dimen/gros_texte"
+            android:layout_marginStart="@dimen/margin_gauche_element_joueur"/>
 
         <Button
             app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
             android:backgroundTint="@color/rouge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5sp"/>
+            android:layout_marginEnd="@dimen/margin_droite_element_joueur"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
