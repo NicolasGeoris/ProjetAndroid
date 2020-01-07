@@ -50,9 +50,10 @@ class JouerFragment : Fragment() {
             val builder = AlertDialog.Builder(context)
             //builder.setView(inflater.inflate(R.layout.new_button, null))
             val layout = LinearLayout(context)
-            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            val layoutParams = LinearLayout.LayoutParams(resources.getDimension(R.dimen.popup_width).toInt(), LinearLayout.LayoutParams.WRAP_CONTENT)
             val editText = EditText(context)
             editText.layoutParams = layoutParams
+            editText.hint = resources.getString(R.string.nom)
             val spinner = Spinner(context)
             spinner.layoutParams = layoutParams
 
@@ -68,7 +69,7 @@ class JouerFragment : Fragment() {
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                jouerViewModel.liste.value?.add(Joueur(editText.text.toString(), "Simple Villageois"))
+                jouerViewModel.liste.value?.add(Joueur(editText.text.toString(), spinner.selectedItem.toString()))
                 (recyclerView.adapter as AdapterRoleJouer).notifyDataSetChanged()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }

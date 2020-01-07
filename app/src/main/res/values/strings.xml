@@ -13,6 +13,7 @@
     <string name="fire">Valider</string>
     <string name="bouton_role">Rôle</string>
     <string name="bouton_tuer">Tuer</string>
+    <string name="nom">Nom du joueur</string>
     <string-array name="roles">
         <item>Simple Villageois</item>
         <item>Loup-Garou</item>
