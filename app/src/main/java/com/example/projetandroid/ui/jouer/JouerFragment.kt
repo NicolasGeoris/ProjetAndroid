@@ -68,7 +68,7 @@ class JouerFragment : Fragment() {
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                jouerViewModel.liste.value = jouerViewModel.liste.value?.plus(Joueur(editText.text.toString(), "chacalito"))
+                jouerViewModel.liste.value?.add(Joueur(editText.text.toString(), "Simple Villageois"))
                 (recyclerView.adapter as AdapterRoleJouer).notifyDataSetChanged()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }
