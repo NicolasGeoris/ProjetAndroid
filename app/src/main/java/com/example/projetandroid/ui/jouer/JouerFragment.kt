@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -14,14 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetandroid.R
 import com.example.projetandroid.ui.roles.JouerViewModel
-import com.example.projetandroid.ui.roles.MyAdapter
 import kotlinx.android.synthetic.main.fragment_jouer.*
 
 class JouerFragment : Fragment() {
 
     private lateinit var jouerViewModel : JouerViewModel
-    var nom_joueur = ""
-    var role_joueur = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,16 +49,26 @@ class JouerFragment : Fragment() {
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
             //builder.setView(inflater.inflate(R.layout.new_button, null))
-            var inputName = EditText(context)
-            inputName.setBackgroundColor(255)
-            var input_role = Spinner(context)
-            builder.setView(inputName)
+            val layout = LinearLayout(context)
+            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            val editText = EditText(context)
+            editText.layoutParams = layoutParams
+            val spinner = Spinner(context)
+            spinner.layoutParams = layoutParams
+
+            val arrayAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.roles))
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = arrayAdapter
+
+            layout.addView(editText)
+            layout.addView(spinner)
+            builder.setView(layout)
             //builder.setView(input_role)
             builder.create()
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                jouerViewModel.liste.value = jouerViewModel.liste.value?.plus(Joueur(input_nom.text.toString(), "chacalito"))
+                jouerViewModel.liste.value = jouerViewModel.liste.value?.plus(Joueur(editText.text.toString(), "chacalito"))
                 (recyclerView.adapter as AdapterRoleJouer).notifyDataSetChanged()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }
