@@ -11,6 +11,8 @@
     <string name="dialog_fire_missiles">Renseigner le nom et le rôle du joueur</string>
     <string name="cancel">Annuler</string>
     <string name="fire">Valider</string>
+    <string name="bouton_role">Rôle</string>
+    <string name="bouton_tuer">Tuer</string>
     <string-array name="roles">
         <item>Simple Villageois</item>
         <item>Loup-Garou</item>

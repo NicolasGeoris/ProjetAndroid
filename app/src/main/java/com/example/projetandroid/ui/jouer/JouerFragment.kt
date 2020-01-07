@@ -51,16 +51,16 @@ class JouerFragment : Fragment() {
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
             //builder.setView(inflater.inflate(R.layout.new_button, null))
-            var input_nom = EditText(context)
+            val input_nom = EditText(context)
             input_nom.setBackgroundColor(255)
-            var input_role = Spinner(context)
+            val input_role = Spinner(context)
             builder.setView(input_nom)
             //builder.setView(input_role)
             builder.create()
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                jouerViewModel.liste.value = jouerViewModel.liste.value?.plus(Joueur(input_nom.text.toString(), "chacalito"))
+                jouerViewModel.liste.value?.add(Joueur(input_nom.text.toString(), "Simple Villageois"))
                 (recyclerView.adapter as AdapterRoleJouer).notifyDataSetChanged()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }

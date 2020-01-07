@@ -7,8 +7,8 @@ import com.example.projetandroid.ui.jouer.Joueur
 
 class JouerViewModel : ViewModel() {
 
-    private val _liste = MutableLiveData<List<Joueur>>().apply {
-        value = listOf(Joueur("test", "test"))
+    private val _liste = MutableLiveData<MutableList<Joueur>>().apply {
+        value = mutableListOf(Joueur("test", "test"))
     }
-    val liste: MutableLiveData<List<Joueur>> = _liste
+    val liste: MutableLiveData<MutableList<Joueur>> = _liste
 }

@@ -43,7 +43,7 @@
             android:id="@+id/description_role"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:paddingStart="3sp"
             android:paddingEnd="3sp"
             android:textColor="@color/couleur_texte"/>
