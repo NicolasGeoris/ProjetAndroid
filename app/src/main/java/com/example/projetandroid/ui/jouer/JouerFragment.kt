@@ -37,20 +37,20 @@ class JouerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val inflater = requireActivity().layoutInflater
+        //val inflater = requireActivity().layoutInflater
         new_player.setOnClickListener {
             val builder = AlertDialog.Builder(context)
             //builder.setView(inflater.inflate(R.layout.new_button, null))
-            var input_nom = EditText(context)
-            input_nom.setBackgroundColor(255)
+            var inputName = EditText(context)
+            inputName.setBackgroundColor(255)
             var input_role = Spinner(context)
-            builder.setView(input_nom)
+            builder.setView(inputName)
             //builder.setView(input_role)
             builder.create()
             builder.setPositiveButton(
                 R.string.fire
             ) { dialog, id ->
-                nom_joueur = input_nom.text.toString()
+                nom_joueur = inputName.text.toString()
                 //role_joueur = input_role.selectedItem.toString()
             }
             builder.setNegativeButton(R.string.cancel) { _, _ -> }
