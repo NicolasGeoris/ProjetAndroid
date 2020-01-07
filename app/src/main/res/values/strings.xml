@@ -11,4 +11,22 @@
     <string name="dialog_fire_missiles">Renseigner le nom et le rôle du joueur</string>
     <string name="cancel">Annuler</string>
     <string name="fire">Valider</string>
+    <string-array name="roles">
+        <item>Simple Villageois</item>
+        <item>Loup-Garou</item>
+        <item>Voyante</item>
+        <item>Petite Fille</item>
+        <item>Chasseur</item>
+        <item>Sorcière</item>
+        <item>Cupidon</item>
+    </string-array>
+    <string-array name="roles_desc">
+        <item>Un simple villageois qui ne se réveille pas la nuit</item>
+        <item>Villageois le jour, se réveille pour égorger les autres villageois la nuit</item>
+        <item>Villageois qui se réveille chaque nuit pour observer le rôle de quelqu\'un</item>
+        <item>Villageois qui peut discrètement observer les loups pendant la nuit</item>
+        <item>Villageois qui tue quelqu\'un à sa mort</item>
+        <item>Villageois qui possède une potion de mort et une potion de résurrection et qui se réveille la nuit pour les utiliser, chacune une fois par partie</item>
+        <item>Villageois qui lie deux personnes la première nuit. Si l\'un des amoureux meurt, l\'autre meurt aussi</item>
+    </string-array>
 </resources>

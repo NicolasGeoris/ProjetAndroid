@@ -27,14 +27,14 @@ class RolesFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_liste_roles)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
 
-        val roles = listOf(
-            Role("Simple Villageois", "Un simple villageois qui ne se réveille pas la nuit"),
-            Role("Loup-Garou", "Villageois le jour, se réveille pour égorger les autres villageois la nuit"),
-            Role("Voyante", "Villageois qui se réveille chaque nuit pour observer le rôle de quelqu'un"),
-            Role("Petite Fille", "Villageois qui peut discrètement observer les loups pendant la nuit"),
-            Role("Chasseur", "Villageois qui tue quelqu'un à sa mort"),
-            Role("Sorcière", "Villageois qui possède une potion de mort et une potion de résurrection et qui se réveille la nuit pour les utiliser, chacune une fois par partie"),
-            Role("Cupidon", "Villageois qui lie deux personnes la première nuit. Si l'un des amoureux meurt, l'autre meurt aussi"))
+        val role = resources.getStringArray(R.array.roles)
+        val role_desc = resources.getStringArray(R.array.roles_desc)
+
+        val roles = mutableListOf<Role>()
+
+        for (i in 0 until 7) {
+            roles.add(Role(role[i], role_desc[i]))
+        }
 
         val adapter = MyAdapter(roles)
         recyclerView?.adapter = adapter
