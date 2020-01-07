@@ -1,5 +1,6 @@
 package com.example.projetandroid.ui.jouer
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.NumberPicker
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projetandroid.R
 import com.example.projetandroid.Role
 
-class AdapterRoleJouer(private val myDataset: List<Joueur>) :
+class AdapterRoleJouer(private var myDataset: List<Joueur>) :
     RecyclerView.Adapter<AdapterRoleJouer.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
